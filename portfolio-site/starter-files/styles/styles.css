@@ -1,3 +1,75 @@
+/*
+COLOR PALETTE 
+
+Champagne Pink: #F9DEC9
+Flame: #D36135
+Chestnut: #A24936
+Lapis Lazuli: #335C81
+Indigo Dye: #274060
+
+*/
+
+/* GLOBAL STYLES */
+
 body {
-    background: orange;  
+    background: #F9DEC9;  
+}
+
+h1 {
+    color: #A24936
+}
+
+h2 {
+    color: #D36135
+}
+
+#highlight {
+    background: yellow;
+}
+
+/* links */
+a {
+    color: #274060
+}
+
+a:hover {
+    color: #335C81;
+    text-decoration: none;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    color: #D36135
+}
+
+
+/* HOME */
+.home {
+    background: url(../images/bg-home-office-studio.jpg) no-repeat;
+    background-size: cover
+}
+
+.home .content-wrapper {
+    background-color: rgb(255 255 255 / 0.9);
+}
+
+
+/* RESUME */
+
+/* Profile */
+
+/* Projects */
+
+/* Work Experience */
+
+/* Education */
+
+/* FOOTER */
+
+footer {
+    background: darkblue;
+    color: #335C81;
 }
