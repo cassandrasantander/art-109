@@ -11,6 +11,21 @@ Indigo Dye: #274060
 
 /* GLOBAL STYLES */
 
+/*
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+*/
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html. body {
+    height: 100%;
+}
+
 body {
     background: #F9DEC9;  
 }
@@ -70,6 +85,20 @@ footer a:hover {
 /* FOOTER */
 
 footer {
-    background: darkblue;
-    color: #335C81;
+    background: #335C81;
+    color: white;
+}
+
+.socials {
+    list-style-type: none;
+    padding: 0;
+
+}
+
+.socials li {
+    display: inline-block;
+}
+
+.socials img {
+    width: 32px;
 }
