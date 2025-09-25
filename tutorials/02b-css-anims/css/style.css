@@ -1,5 +1,23 @@
+.body {
+    animation: change-color 5s infinite alternate;
+}
+
+@keyframes change-color {
+    0% {background-color: rosybrown;}
+    50% {background-color: azure;}
+    100%  {background-color: antiquewhite}
+}
+
 .title {
-    font-family: 'Courier New', Courier, monospace
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin: 80px auto;
+    animation: skew 3s infinite alternate;
+}
+
+@keyframes skew {
+    0% {transform: skew(0deg, 0deg);}
+    50% {transform: skew(30deg, 30deg);}
 }
 
 .square {
@@ -38,4 +56,15 @@
     background-color: green;
     color: greenyellow;
     transform: scale(1.5);
+}
+
+.loading {
+    animation: stretch 5s infinite alternate;
+    background-color: green;
+    width: 80vw;
+}
+
+@keyframes stretch {
+    0% {width: 100px;}
+    100% {width: 80vw;}
 }
