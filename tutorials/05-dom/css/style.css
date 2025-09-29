@@ -32,3 +32,18 @@ body {
    /* font-size 1.6rem is now the same as 16px */
    line-height: 1.6;
 }
+
+header {
+   padding: 50px;
+   background-color: purple;
+   text-align: center;
+}
+
+main {
+   max-width: 800 px;
+   margin: 50px;
+}
+
+p {
+   margin: 20px;
+}
