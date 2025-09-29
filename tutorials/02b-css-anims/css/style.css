@@ -51,15 +51,39 @@
     transform: rotate(30deg);
 }
 
-.catsie{
+.image-parent {
     text-align: center;
-    color: red;
-    animation: dog 3s
+}
+
+.catsie {
+    
+    opacity: 100%;
+    scale: 75%;
+    display: inline;
+    transition: all 3s;
+}
+
+.catsie:hover {
+    opacity: 0%;
+}
+
+.lilo {
+    animation: dog 1s infinite alternate;
+    display: inline-block;
 }
 
 @keyframes dog {
-    100% {visibility: collapse;}
-    0% {visibility: visible;}
+    75% {
+        transform: scale(75%);
+    }
+
+    50% {
+        transform: scale(50%);
+    }
+
+    100% {
+        transform: scale(100%);
+    }
 }
 
 .button-div {
