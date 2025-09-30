@@ -7,3 +7,9 @@ setTimeout(function () {
     console.log("timeout worked!")
 },  3000)
 
+// click event on header changes background color
+
+document.querySelector("header").onclick = function() {
+    // console.log("click header")
+    document.querySelector("body").
+}
