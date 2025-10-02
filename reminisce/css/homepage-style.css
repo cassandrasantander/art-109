@@ -1,0 +1,59 @@
+body {
+    background-color: lightslategray;
+}
+
+a {
+    color: red;
+}
+
+a:hover {
+    color: violet;
+}
+
+h1 {
+    color: white;
+}
+
+
+/* test css below */
+.header {
+    animation: scrolling infinite alternate;
+}
+
+
+.scrolling-header {
+    color: white;
+    scale: 2.5;
+    margin: 20px;
+    background-color: lightblue;
+}
+
+
+
+/* test css above */
+
+.topnav {
+    background-color: white;
+    text-align: center;
+    color: orange;
+    margin: 5px;
+    padding: 10px;
+
+}
+
+
+.loading {
+    animation: stretch 5s infinite alternate;
+    background-color: green;
+    width: 80vw;
+}
+
+@keyframes stretch {
+    0% {
+        width: 100px;
+    }
+
+    100% {
+        width: 80vw;
+    }
+}
