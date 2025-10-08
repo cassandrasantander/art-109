@@ -1,0 +1,23 @@
+body {
+    background-color: grey;
+}
+
+.topnav {
+    background-color: white;
+    text-align: center;
+    color: orange;
+    margin: 5px;
+    padding: 10px;
+
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.textbox {
+    text-align: center;
+    padding: 10px;
+}
