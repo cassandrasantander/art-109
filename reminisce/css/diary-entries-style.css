@@ -1,12 +1,80 @@
+/* ~~~~~~~~~~ overall site visual design ~~~~~~~~~~ */
+
 body {
-    background-color: orange;
+    background-color: #FECEF1;
 }
+
+/* ~~~~~~~~~~ header ~~~~~~~~~~ */
+
+h1 {
+    color: #D81E5B;
+    margin: 25px;
+    scale: 1.5;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* ~~~~~~~~~~ navigation ~~~~~~~~~~ */
 
 .topnav {
     background-color: white;
     text-align: center;
-    color: orange;
-    margin: 5px;
-    padding: 10px;
+    opacity: 70%;
+    margin: 10px;
+    padding: 15px;    
+}
 
+.navlink {
+    padding: 20px;
+}
+
+a {
+    color: #760072;
+}
+
+a:hover {
+    color: #df00d8;
+}
+
+/* ~~~~~~~~~~ diary entries ~~~~~~~~~~*/
+
+/* body */
+
+.body-text {
+    color: #D81E5B;
+}
+
+.signoff {
+    color: #D81E5B;
+    
+}
+
+.diary-body{
+    margin-top: 30px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.diary-entry {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    column-gap: 20px;
+    
+}
+
+.loading {
+    animation: stretch 5s infinite alternate;
+    background-color: green;
+    width: 80vw;
+}
+
+@keyframes stretch {
+    0% {
+        width: 100px;
+    }
+
+    100% {
+        width: 80vw;
+    }
 }

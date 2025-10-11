@@ -21,6 +21,7 @@ h1 {
 
 .gif {
     scale: .7;
+    background: url(..images/stars.gif) repeat;
 }
 
 /* ~~~~~~~~~~ navigation ~~~~~~~~~~ */
@@ -28,17 +29,21 @@ h1 {
 .topnav {
     background-color: white;
     text-align: center;
-    color: orange;
+    opacity: 70%;
     margin: 10px;
     padding: 15px;    
 }
 
+.navlink {
+    padding: 20px;
+}
+
 a {
-    color: red;
+    color: #760072;
 }
 
 a:hover {
-    color: violet;
+    color: #df00d8;
 }
 
 /* ~~~~~~~~~~ text css ~~~~~~~~~~*/
@@ -59,24 +64,3 @@ a:hover {
     
 }
 
-
-/* link design */
-
-
-
-
-.loading {
-    animation: stretch 5s infinite alternate;
-    background-color: green;
-    width: 80vw;
-}
-
-@keyframes stretch {
-    0% {
-        width: 100px;
-    }
-
-    100% {
-        width: 80vw;
-    }
-}

@@ -1,6 +1,6 @@
 /* ~~~~~~~~~~ overall site visual design ~~~~~~~~~~ */
 body {
-    animation: change-color 10s infinite alternate;
+    animation: change-color 20s infinite alternate;
 }
 
 @keyframes change-color {
@@ -21,16 +21,32 @@ body {
 /* ~~~~~~~~~~ header ~~~~~~~~~~ */
 
 h1 {
-    color: #D81E5B;
     margin: 25px;
     scale: 1.5;
     text-align: center;
     display: flex;
     justify-content: center;
-    animation: fade-in 15s;
+    animation-name: text-color, fade-in;
+    animation-duration: 20s, 15s;
+    animation-iteration-count: infinite, 1;
+    animation-direction: alternate, alternate;
 }
 
 
+
+@keyframes text-color {
+    0% {
+        color: #253a68;
+    }
+
+    50% {
+        color: #524294;
+    }
+
+    100% {
+        color: #7a3066;
+    }
+}
 
 /* ~~~~~~~~~~ navigation ~~~~~~~~~~ */
 .topnav {
@@ -39,12 +55,23 @@ h1 {
     color: orange;
     margin: 5px;
     padding: 10px;
+    opacity: 0%;
     animation: fadein-nav 10s;
+    animation-delay: 20s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes fadein-nav {
     from {opacity: 0%;}
     to {opacity: 100%;}
+}
+
+a {
+    color: #760072;
+}
+
+a:hover {
+    color: #df00d8;
 }
 
 /* ~~~~~~~~~~ content ~~~~~~~~~~*/
