@@ -1,5 +1,36 @@
+/* ~~~~~~~~~~ overall site visual design ~~~~~~~~~~ */
+
 body {
-    background-color: lightslategray;
+    background-color: #FECEF1;
+}
+
+.catgif {
+    display: flex;
+    justify-content: center;
+}
+/* ~~~~~~~~~~ header ~~~~~~~~~~ */
+
+h1 {
+    color: #D81E5B;
+    margin: 25px;
+    scale: 1.5;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.gif {
+    scale: .7;
+}
+
+/* ~~~~~~~~~~ navigation ~~~~~~~~~~ */
+
+.topnav {
+    background-color: white;
+    text-align: center;
+    color: orange;
+    margin: 10px;
+    padding: 15px;    
 }
 
 a {
@@ -10,36 +41,28 @@ a:hover {
     color: violet;
 }
 
-h1 {
-    color: white;
+/* ~~~~~~~~~~ text css ~~~~~~~~~~*/
+
+/* body */
+
+.body-text {
+    color: #D81E5B;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.signoff {
+    color: #D81E5B;
+    display: flex;
+    justify-content: center;
+    
 }
 
 
-/* test css below */
-.header {
-    animation: scrolling infinite alternate;
-}
+/* link design */
 
 
-.scrolling-header {
-    color: white;
-    scale: 2.5;
-    margin: 20px;
-    background-color: lightblue;
-}
-
-
-
-/* test css above */
-
-.topnav {
-    background-color: white;
-    text-align: center;
-    color: orange;
-    margin: 5px;
-    padding: 10px;
-
-}
 
 
 .loading {

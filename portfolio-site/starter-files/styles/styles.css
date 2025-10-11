@@ -18,17 +18,19 @@ https://www.paulirish.com/2012/box-sizing-border-box-ftw/
 html {
     box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 
-html. body {
+html, body {
     height: 100%;
 }
 
 body {
-    background: #F9DEC9;  
-    padding: 20px;
+    background: #F9DEC9;
     margin: 0px auto;
 }
 
@@ -69,22 +71,41 @@ footer a:hover {
     color: #D36135
 }
 
+.btn {
+    background: #3c8453;
+    color: #f6f6f6;
+    text-decoration: none;
+}
+
+.content-wrapper {
+    margin: 0 auto;
+    padding: 30px;
+    max-width: 900px;
+}
+
 
 /* HOME */
 .home {
     background: url(../images/bg-home-office-studio.jpg) no-repeat;
-    background-size: cover
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
 }
 
 .home .content-wrapper {
+    flex: 1 0 auto;
+}
+
+.content-bg {
     background-color: rgb(255 255 255 / 0.9);
+    padding: 30px;
 }
 
 /* RESUME */
 .resume header::before {
     background: url(../images/bg-home-office-studio.jpg) center;
     background-size: cover;
-    content: "";
+    content:"";
     display: block;
     height: 375px;
 }
@@ -99,7 +120,7 @@ footer a:hover {
 
 .download-link {
     position: fixed;
-    background-color:#274060;
+    background-color: #274060;
     color: white;
     padding: 5px;
     border-radius: 5px;
@@ -124,6 +145,14 @@ footer a:hover {
 
 /* Work Experience */
 
+.work-item {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    column-gap: 20px;
+    
+}
+
+
 /* Education */
 
 /* FOOTER */
@@ -135,6 +164,9 @@ footer {
     text-align: center;
     padding-top: 2px;
     padding-bottom: 2px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
 }
 
 .socials {
@@ -145,6 +177,11 @@ footer {
 
 .socials li {
     display: inline-block;
+    margin-left: 10px;
+}
+
+.socials img:hover {
+    opacity: 0.5;
 }
 
 .socials img {

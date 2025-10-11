@@ -1,7 +1,38 @@
+/* ~~~~~~~~~~ overall site visual design ~~~~~~~~~~ */
 body {
-    background-color: grey;
+    animation: change-color 10s infinite alternate;
 }
 
+@keyframes change-color {
+    0% {
+        background-color: #6987C9;
+    }
+
+    50% {
+        background-color: #b4aadd;
+    }
+
+    100% {
+        background-color: #FECEF1;
+    }
+}
+
+
+/* ~~~~~~~~~~ header ~~~~~~~~~~ */
+
+h1 {
+    color: #D81E5B;
+    margin: 25px;
+    scale: 1.5;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    animation: fade-in 10s;
+}
+
+
+
+/* ~~~~~~~~~~ navigation ~~~~~~~~~~ */
 .topnav {
     background-color: white;
     text-align: center;
@@ -11,13 +42,24 @@ body {
 
 }
 
+
+/* ~~~~~~~~~~ content ~~~~~~~~~~*/
 img {
     display: block;
     margin: 0 auto;
     padding: 30px;
+    animation: fade-in 10s;
+    animation-delay: 3s;
 }
 
 .textbox {
     text-align: center;
     padding: 10px;
+    animation: fade-in 10s
+    animation-delay: 3s;
+}
+
+@keyframes fade-in {
+    from {opacity: 0%;}
+    to {opacity: 100%;}
 }
