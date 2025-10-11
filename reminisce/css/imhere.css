@@ -27,7 +27,7 @@ h1 {
     text-align: center;
     display: flex;
     justify-content: center;
-    animation: fade-in 10s;
+    animation: fade-in 15s;
 }
 
 
@@ -39,24 +39,26 @@ h1 {
     color: orange;
     margin: 5px;
     padding: 10px;
-
+    animation: fadein-nav 10s;
 }
 
+@keyframes fadein-nav {
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+}
 
 /* ~~~~~~~~~~ content ~~~~~~~~~~*/
 img {
     display: block;
     margin: 0 auto;
     padding: 30px;
-    animation: fade-in 10s;
-    animation-delay: 3s;
+    animation: fade-in 15s;
 }
 
 .textbox {
     text-align: center;
     padding: 10px;
-    animation: fade-in 10s
-    animation-delay: 3s;
+    animation: fade-in 15s
 }
 
 @keyframes fade-in {
