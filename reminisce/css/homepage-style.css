@@ -21,7 +21,6 @@ h1 {
 
 .gif {
     scale: .7;
-    background: url(..images/stars.gif) repeat;
 }
 
 /* ~~~~~~~~~~ navigation ~~~~~~~~~~ */
@@ -54,6 +53,7 @@ a:hover {
     color: #D81E5B;
     display: flex;
     justify-content: center;
+    scale: 1.1;
     margin-top: 30px;
 }
 
@@ -61,6 +61,6 @@ a:hover {
     color: #D81E5B;
     display: flex;
     justify-content: center;
-    
+    scale: 1.1;
 }
 

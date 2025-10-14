@@ -63,3 +63,13 @@ a:hover {
     
 }
 
+.photo-gallery {
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 40px;
+    row-gap: 50px;
+    
+}

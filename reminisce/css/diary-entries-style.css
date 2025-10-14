@@ -39,15 +39,23 @@ a:hover {
 
 /* ~~~~~~~~~~ diary entries ~~~~~~~~~~*/
 
-/* body */
-
-.body-text {
-    color: #D81E5B;
+.diary-entry {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    margin-top: 30px;
+    column-gap: 90px;
 }
 
-.signoff {
-    color: #D81E5B;
-    
+/* diary summary */
+
+.photos {
+    margin-left: -20px;
+}
+
+/* diary writing */
+
+.diary-details {
+    margin-top: 75px;
 }
 
 .diary-body{
@@ -56,25 +64,12 @@ a:hover {
     margin-right: 200px;
 }
 
-.diary-entry {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    column-gap: 20px;
+.body-text {
+    color: #D81E5B;
+    scale: 1.1;
+}
+
+.signoff {
+    color: #D81E5B;
     
-}
-
-.loading {
-    animation: stretch 5s infinite alternate;
-    background-color: green;
-    width: 80vw;
-}
-
-@keyframes stretch {
-    0% {
-        width: 100px;
-    }
-
-    100% {
-        width: 80vw;
-    }
 }
