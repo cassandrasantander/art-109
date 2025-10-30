@@ -1,15 +1,34 @@
-console.log("hello hello")
+document.querySelector("#image-0").addEventListener("click", function (){
+    document.querySelector("#image-1").style.visibility = "visible";
+    alert("bark bark bark");
+})
 
-//js timeout changes h1 title after 3 seconds
+document.querySelector("#image-1").addEventListener("click", function (){
+    document.querySelector("#image-2").style.visibility = "visible";
+})
 
-setTimeout(function () {
-    document.querySelector("#page-title").style.color = "pink";
-    console.log("timeout worked!")
-},  3000)
+document.querySelector("#image-2").addEventListener("click", function (){
+    document.querySelector("#image-3").style.visibility = "visible";
+})
 
-// click event on header changes background color
+document.querySelector("#image-3").addEventListener("click", function (){
+    document.querySelector("#image-4").style.visibility = "visible";
+})
 
-document.querySelector("header").onclick = function() {
-    // console.log("click header")
-    document.querySelector("body").
-}
+document.querySelector("#image-4").addEventListener("click", function (){
+    document.querySelector("#image-5").style.visibility = "visible";
+})
+
+document.querySelector("#image-5").addEventListener("click", function (){
+    document.querySelector("#image-6").style.visibility = "visible";
+})
+
+document.querySelector("#image-6").addEventListener("click", function (){
+    document.querySelector("#image-7").style.visibility = "visible";
+})
+
+document.querySelector("#image-7").addEventListener("click", function (){
+    document.querySelector("#image-0").style.visibility = "visible";
+    alert("you made it!");
+})
+
