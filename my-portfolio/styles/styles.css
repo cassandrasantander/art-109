@@ -1,0 +1,276 @@
+/*
+COLOR PALETTE 
+
+Champagne Pink: #F9DEC9
+Flame: #D36135
+Chestnut: #A24936
+Lapis Lazuli: #335C81
+Indigo Dye: #274060
+
+*/
+
+/* GLOBAL STYLES */
+
+/*
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+*/
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: #F9DEC9;
+    margin: 0px auto;
+}
+
+/* Basic styles for the navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #28a745;
+    /* Green background */
+    color: #fff;
+}
+
+/* Logo styling */
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+/* Navigation links styling */
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s, text-decoration 0.3s, background-color 0.3s;
+    padding: 5px 10px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #e0e0e0;
+    /* Lighter color for active/hover */
+    background-color: #1c7430;
+    /* Darker green background on hover */
+    border-radius: 4px;
+    /* Optional: rounded corners */
+}
+
+/* Menu toggle button for mobile view */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    background-color: #fff;
+    height: 3px;
+    width: 25px;
+    margin: 5px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #28a745;
+        /* Green background for mobile view */
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+.content-wrapper {
+    margin: 0px auto;
+    max-width: 900 px;
+    padding: 30px;
+}
+
+
+h1 {
+    color: #A24936
+}
+
+h2 {
+    color: #D36135
+}
+
+#highlight {
+    background: yellow;
+}
+
+/* links */
+a {
+    color: #274060
+}
+
+a:hover {
+    color: #335C81;
+    text-decoration: none;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    color: #D36135
+}
+
+.btn {
+    background: #3c8453;
+    color: #f6f6f6;
+    text-decoration: none;
+}
+
+.content-wrapper {
+    margin: 0 auto;
+    padding: 30px;
+    max-width: 900px;
+}
+
+
+/* HOME */
+.home {
+    background: url(../images/bg-home-office-studio.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+.home .content-wrapper {
+    flex: 1 0 auto;
+}
+
+.content-bg {
+    background-color: rgb(255 255 255 / 0.9);
+    padding: 30px;
+}
+
+/* RESUME */
+.resume header::before {
+    background: url(../images/bg-home-office-studio.jpg) center;
+    background-size: cover;
+    content:"";
+    display: block;
+    height: 375px;
+}
+
+.resume-section {
+    margin-bottom: 50px;
+}
+
+.resume-section h2 {
+    border-bottom: 2px dashed #274060;
+}
+
+.download-link {
+    position: fixed;
+    background-color: #274060;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    top: 10px;
+    left: 10px;
+}
+
+/* Profile */
+
+/* Projects */
+
+.project-item {
+    display: flow-root;
+    margin: 30px 0;
+}
+
+.project-item img {
+    width: 300px;
+    float: left;
+    margin-right: 20px;
+}
+
+/* Work Experience */
+
+.work-item {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    column-gap: 20px;
+    
+}
+
+
+/* Education */
+
+/* FOOTER */
+
+footer {
+    background: #335C81;
+    color: white;
+    display: block;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.socials {
+    list-style-type: none;
+    padding: 0;
+
+}
+
+.socials li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.socials img:hover {
+    opacity: 0.5;
+}
+
+.socials img {
+    width: 32px;
+}
