@@ -1,0 +1,26 @@
+body {
+    background-color: rgb(234, 209, 255);
+}
+
+h1 {
+    background-color: red;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+p {
+    background-color: azure;
+    margin-left: 300px;
+    margin-right: 300px;
+    
+}
+
+.essay {
+    background-color: yellow;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
