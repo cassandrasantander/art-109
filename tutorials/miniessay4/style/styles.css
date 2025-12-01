@@ -3,22 +3,25 @@ body {
 }
 
 h1 {
-    background-color: red;
-    margin-left: 300px;
-    margin-right: 300px;
+     background-color: rgb(128 10 128 / 0.4);
+    margin-left: 600px;
+    margin-right: 600px;
     margin-top: 50px;
     text-align: center;
+    font-size: 70px;
+    color: rgb(62, 9, 62);
 }
 
 p {
-    background-color: azure;
+    background-color: white;
     margin-left: 300px;
     margin-right: 300px;
-    
+    padding: 50px;
+    color: rgb(62, 9, 62);
 }
 
 .essay {
-    background-color: yellow;
+    background-color: rgb(128 10 128 / 0.4);
     margin-left: 200px;
     margin-right: 200px;
     padding-top: 25px;
