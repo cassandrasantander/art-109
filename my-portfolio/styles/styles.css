@@ -31,7 +31,7 @@ html, body {
 }
 
 body {
-    background: #F9DEC9;
+    background: #e0c3eb;
     margin: 0px auto;
     font-family: "Montserrat", sans-serif;
     font-size: 1.5rem;
@@ -63,7 +63,7 @@ h3 {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #28a745;
+    background-color: #6e2989;
     /* Green background */
     color: #fff;
 }
@@ -97,7 +97,7 @@ h3 {
 .nav-links a.active {
     color: #e0e0e0;
     /* Lighter color for active/hover */
-    background-color: #1c7430;
+    background-color: #7f53d6;
     /* Darker green background on hover */
     border-radius: 4px;
     /* Optional: rounded corners */
@@ -152,11 +152,19 @@ h3 {
 
 
 h1 {
-    color: #A24936
+    color: #6e2989;
 }
 
 h2 {
-    color: #D36135
+    color: #6e2989;
+}
+
+h3 {
+    color: #7f53d6;
+}
+
+p {
+    color: #535cd6;
 }
 
 #highlight {
@@ -182,7 +190,7 @@ footer a:hover {
 }
 
 .btn {
-    background: #3c8453;
+    background: #7f53d6;
     color: #f6f6f6;
     text-decoration: none;
     text-transform: uppercase;
@@ -202,7 +210,7 @@ footer a:hover {
 
 /* HOME */
 .home {
-    background: url(../images/bg-home-office-studio.jpg) no-repeat;
+    background: url(../images/arcturusheader.jpg) no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -229,7 +237,7 @@ footer a:hover {
 
 /* RESUME */
 .resume header::before {
-    background: url(../images/bg-home-office-studio.jpg) center;
+    background: url(../images/headerpart2.jpg) center;
     background-size: cover;
     content:"";
     display: block;
@@ -355,7 +363,7 @@ footer a:hover {
 /* FOOTER */
 
 footer {
-    background: #335C81;
+    background: #6e2989;
     color: white;
     display: block;
     text-align: center;
