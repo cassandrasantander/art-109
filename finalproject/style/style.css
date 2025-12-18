@@ -27,6 +27,11 @@ p {
     animation: fadein 8s;
 }
 
+.constellation:hover {
+    scale: 1.2;
+}
+
+
 @keyframes fadein {
     from {opacity: 0%;}
     to {opacity: 100%;}
@@ -41,7 +46,7 @@ p {
     grid-template-columns: 300px 1fr;
     margin-top: 40px;
     margin-left: 300px;
-    margin-right: 320px;
+    margin-right: 300px;
     column-gap: 90px;
 }
 
@@ -54,4 +59,5 @@ p {
 .night-sky {
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20% 20% 20% 20%; 
+    padding: 30px;
 }
