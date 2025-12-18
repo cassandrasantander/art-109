@@ -1,0 +1,407 @@
+/*
+COLOR PALETTE 
+
+Champagne Pink: #F9DEC9
+Flame: #D36135
+Chestnut: #A24936
+Lapis Lazuli: #335C81
+Indigo Dye: #274060
+
+*/
+
+/* GLOBAL STYLES */
+
+/*
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+*/
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: #e0c3eb;
+    margin: 0px auto;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+h1, h2, h3 {
+    font-family: "Limelight", sans-serif;
+    font-weight: 400;
+    margin: 0;
+}
+
+h1 {
+    font-size: 5rem;
+    line-height: 0.85;
+}
+
+h2 {
+    font-size: 3.6rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+/* Basic styles for the navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #6e2989;
+    /* Green background */
+    color: #fff;
+}
+
+/* Logo styling */
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+/* Navigation links styling */
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s, text-decoration 0.3s, background-color 0.3s;
+    padding: 5px 10px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #e0e0e0;
+    /* Lighter color for active/hover */
+    background-color: #7f53d6;
+    /* Darker green background on hover */
+    border-radius: 4px;
+    /* Optional: rounded corners */
+}
+
+/* Menu toggle button for mobile view */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    background-color: #fff;
+    height: 3px;
+    width: 25px;
+    margin: 5px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #28a745;
+        /* Green background for mobile view */
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+.content-wrapper {
+    margin: 0px auto;
+    max-width: 900 px;
+    padding: 30px;
+}
+
+
+h1 {
+    color: #6e2989;
+}
+
+h2 {
+    color: #6e2989;
+}
+
+h3 {
+    color: #7f53d6;
+}
+
+p {
+    color: #535cd6;
+}
+
+#highlight {
+    background: yellow;
+}
+
+/* links */
+a {
+    color: #274060
+}
+
+a:hover {
+    color: #335C81;
+    text-decoration: none;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    color: #D36135
+}
+
+.btn {
+    background: #7f53d6;
+    color: #f6f6f6;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    display: inline-block;
+    padding: 7px;
+    letter-spacing: 0.1em;
+    border-radius: 4px;
+}
+
+.content-wrapper {
+    margin: 0 auto;
+    padding: 30px;
+    max-width: 900px;
+}
+
+
+/* HOME */
+.home {
+    background: url(../images/arcturusheader.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+.home .content-wrapper {
+    flex: 1 0 auto;
+}
+
+.content-bg {
+    background-color: rgb(255 255 255 / 0.9);
+    padding: 30px;
+}
+
+@media screen and (max-width:650px) {
+    .home .content-wrapper {
+        padding: 10px;
+    }
+
+    .content-bg {
+        padding: 20px;
+    }
+}
+
+/* RESUME */
+.resume header::before {
+    background: url(../images/headerpart2.jpg) center;
+    background-size: cover;
+    content:"";
+    display: block;
+    height: 375px;
+}
+
+.resume-section {
+    margin-bottom: 50px;
+}
+
+.resume-section h2 {
+    border-bottom: 2px dashed #274060;
+}
+
+.download-link {
+    position: fixed;
+    background-color: #274060;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    top: 10px;
+    left: 10px;
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width:1200px) {
+    .download-link {
+        position: absolute;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .resume header::before {
+        height: 200px;
+    }
+    h1 {
+        font-size: 5rem;
+    }
+
+    h2 {
+        font-size: 2.6rem;
+    }
+}
+
+
+/* Projects */
+
+.project-item {
+    margin: 30px 0;
+}
+
+.project-item img {
+    width: 300px;
+}
+
+@media screen and (min-width: 860px) {
+    .project-item {
+         display: flow-root;
+    }
+
+    .project-item img {
+         float: left;
+         margin-right: 20px;
+    }
+    
+}
+
+@media screen and (min-width:650px) and (max-width:859px) {
+    .project-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+    }
+
+    .project-item img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:500px) {
+     .project-item img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Work Experience */
+
+.work-item {
+    margin: 30px 0;
+}
+
+.work-details p {
+    margin: 0;
+}
+
+@media screen and (min-width:860px) {
+    .work-item {
+        display: grid;
+     grid-template-columns: 300px 1fr;
+        column-gap: 20px;
+    }
+    
+.work-summary p:first-child {
+    margin-top: 0;
+}
+
+}
+
+/* Education */
+
+.education-item {
+    margin: 30px 0;
+}
+
+
+.education-item p {
+    margin: 0;
+}
+
+
+
+/* FOOTER */
+
+footer {
+    background: #6e2989;
+    color: white;
+    display: block;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+}
+
+.socials {
+    list-style-type: none;
+    padding: 0;
+
+}
+
+.socials li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.socials img:hover {
+    opacity: 0.5;
+}
+
+.socials img {
+    width: 32px;
+}
+
+@media screen and (min-width:860px) {
+    footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width:859px) {
+    footer {
+        text-align: center;
+        padding: 10px;
+    }
+}
