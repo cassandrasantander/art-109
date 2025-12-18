@@ -36,8 +36,8 @@ h1 {
     color: white;
     grid-template-columns: 300px 1fr;
     margin-top: 40px;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 300px;
+    margin-right: 320px;
     column-gap: 90px;
 }
 
@@ -49,5 +49,5 @@ h1 {
 
 .night-sky {
     display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20% 20% 20% 20% 20% 20%; 
+    grid-template-columns: 20% 20% 20% 20% 20% 20% 20% 20%; 
 }
