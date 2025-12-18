@@ -5,7 +5,7 @@
 
 
 body {
-    background-color: rgb(47, 47, 148);
+    background-color: #2f2f94;
 }
 
 h1 {
@@ -13,6 +13,7 @@ h1 {
 }
 
 p {
+    color: white;
     font-size: 1.5rem;
 }
 
@@ -54,6 +55,31 @@ p {
     text-align: center;
     scale: .9;
     margin-top: 50px;
+}
+
+.drawing {
+    color: rgb(99, 54, 232);
+    background-color:rgb(144, 147, 241);
+    border-radius: 6px;
+    scale: 1.2;
+    margin-left: 25px;
+    padding: 10px;
+    text-decoration: none;
+    opacity: 0%;
+    animation: fadein2 5s;
+    animation-delay: 5s;
+    animation-fill-mode: forwards;
+}
+
+.drawing:hover {
+    Color: rgb(144, 147, 241);
+    background-color: rgb(99, 54, 232);
+}
+
+
+@keyframes fadein2 {
+    from {opacity: 0%;}
+    to {opacity: 100%;}
 }
 
 .night-sky {
