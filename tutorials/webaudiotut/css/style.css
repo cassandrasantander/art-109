@@ -1,0 +1,14 @@
+
+
+
+canvas {
+    position: Absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+#play-button {
+    visibility: hidden;
+}
