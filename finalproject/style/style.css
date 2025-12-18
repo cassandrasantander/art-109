@@ -1,7 +1,46 @@
+
+
+/* overall appearance */
+
+
+
 body {
     background-color: rgb(47, 47, 148);
 }
 
 h2 {
     color: white;
+}
+
+/* constellation css */
+
+.constellation {
+    animation: fadein 5s;
+}
+
+@keyframes fadein {
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+}
+
+
+/* information setup */
+
+.con-information {
+    display: grid;
+    color: white;
+    grid-template-columns: 300px 1fr;
+    margin-top: 40px;
+    margin-left: 180px;
+    margin-right: 180px;
+    column-gap: 90px;
+}
+
+.home-button {
+    display: center;
+}
+
+.night-sky {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20% 20% 20% 20% 20% 20%; 
 }
