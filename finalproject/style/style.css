@@ -8,14 +8,19 @@ body {
     background-color: rgb(47, 47, 148);
 }
 
-h2 {
+h1 {
     color: white;
+}
+
+.con-header {
+    text-align: center;
+    margin: 40px;
 }
 
 /* constellation css */
 
 .constellation {
-    animation: fadein 5s;
+    animation: fadein 8s;
 }
 
 @keyframes fadein {
@@ -31,13 +36,15 @@ h2 {
     color: white;
     grid-template-columns: 300px 1fr;
     margin-top: 40px;
-    margin-left: 180px;
-    margin-right: 180px;
+    margin-left: 200px;
+    margin-right: 200px;
     column-gap: 90px;
 }
 
 .home-button {
-    display: center;
+    text-align: center;
+    scale: .9;
+    margin-top: 50px;
 }
 
 .night-sky {
