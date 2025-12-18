@@ -57,6 +57,7 @@ h3 {
     font-size: 2.4rem;
 }
 
+
 /* Basic styles for the navbar */
 .navbar {
     display: flex;
@@ -404,4 +405,21 @@ footer {
         text-align: center;
         padding: 10px;
     }
+}
+
+.navbar,
+.content-wrapper,
+footer {
+    position: relative;
+    z-index: 10;
+}
+
+#three-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none; /* lets clicks pass through */
 }
