@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Copilot Clock</title>
+</head>
+<body>
+    <main>
+        <section class="clock-container" aria-label="Clock">
+            <div id="clock" class="clock" aria-live="polite">--:--:--</div>
+            <div id="date" class="date"></div>
+            <div class="moon-area">
+                <div class="moon-wrapper" aria-hidden="false">
+                    <div class="moon" id="moon">
+                        <div class="moon-face"></div>
+                        <div class="moon-shadow" id="moonShadow"></div>
+                    </div>
+                    <div class="moon-info" aria-live="polite">
+                        <div id="moonPhaseName" class="phase-name">Moon: Calculating…</div>
+                        <div id="moonIllum" class="phase-illum">Illumination: —</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <style>
+        :root{--bg:#0b1221;--card:#0f1724;--accent:#5eead4;--muted:#94a3b8}
+        html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+        body{display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,var(--bg),#071029);color:#e6eef8}
+        .clock-container{background:rgba(255,255,255,0.03);padding:28px 36px;border-radius:12px;box-shadow:0 8px 24px rgba(2,6,23,0.6);text-align:center}
+        .clock{font-family:SFMono-Regular,Menlo,Monaco,monospace;font-size:64px;letter-spacing:2px;color:var(--accent)}
+        .date{margin-top:6px;color:var(--muted);font-size:16px}
+        @media (max-width:420px){.clock{font-size:40px;padding:0 8px}}
+        .moon-area{margin-top:14px;display:flex;justify-content:center}
+        .moon-wrapper{display:flex;gap:12px;align-items:center}
+        .moon{width:84px;height:84px;border-radius:50%;position:relative}
+        .moon-face{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 30% 28%,#fff,#f0f0f0 60%,#ddd 100%);box-shadow:inset -6px -6px 18px rgba(0,0,0,0.18)}
+        .moon-shadow{position:absolute;inset:0;border-radius:50%;background:var(--bg);transition:transform 400ms linear,left 400ms linear}
+        .moon-info{display:flex;flex-direction:column;align-items:flex-start}
+        .phase-name{color:var(--muted);font-size:14px}
+        .phase-illum{color:var(--accent);font-weight:600}
+        body.night{background:linear-gradient(180deg,#041028,#020617)}
+        body.night .clock-container{background:rgba(255,255,255,0.02)}
+        .clock-container{position:relative;z-index:1}
+        /* fireflies are placed behind clock content so they don't obscure it */
+        .fireflies{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 600ms ease;z-index:0}
+        body.night .fireflies{opacity:1}
+        .firefly{position:absolute;width:10px;height:10px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,#ffd86b 50%,#ffb547);box-shadow:0 0 10px #ffd86b;transform:translate(-50%,-50%) scale(0.9);transition:transform 2600ms linear,opacity 2600ms ease;z-index:0}
+        @media (max-width:420px){.firefly{width:8px;height:8px}}
+        /* ensure main foreground elements sit above the fireflies */
+        .clock{position:relative;z-index:2}
+        .moon, .moon-wrapper, .moon-info, .date{position:relative;z-index:2}
+    </style>
+
+    <script>
+        function pad(n){return String(n).padStart(2,'0')}
+        function updateClock(){
+            const now = new Date();
+            const h = pad(now.getHours());
+            const m = pad(now.getMinutes());
+            const s = pad(now.getSeconds());
+            const clock = document.getElementById('clock');
+            const dateEl = document.getElementById('date');
+            if(clock) clock.textContent = `${h}:${m}:${s}`;
+            if(dateEl) dateEl.textContent = now.toLocaleDateString(undefined,{weekday:'long',year:'numeric',month:'short',day:'numeric'});
+        }
+        // Moon phase functions
+        function getMoonPhase(date){
+            const synodic = 29.530588853; // average length of a synodic month in days
+            const ref = Date.UTC(2000,0,6,18,14,0); // known new moon reference (Jan 6, 2000 18:14 UTC)
+            const diff = (Date.UTC(date.getFullYear(),date.getMonth(),date.getDate(),date.getHours(),date.getMinutes(),date.getSeconds()) - ref) / 86400000; // days
+            const phase = ((diff % synodic) + synodic) % synodic; // 0..synodic
+            return phase / synodic; // normalized 0..1 (0=new,0.5=full)
+        }
+
+        function phaseNameFromFraction(f){
+            if(f < 0.01 || f > 0.99) return 'New Moon';
+            if(f < 0.25) return 'Waxing Crescent';
+            if(f === 0.25) return 'First Quarter';
+            if(f < 0.5) return 'Waxing Gibbous';
+            if(f === 0.5) return 'Full Moon';
+            if(f < 0.75) return 'Waning Gibbous';
+            if(f === 0.75) return 'Last Quarter';
+            return 'Waning Crescent';
+        }
+
+        function renderMoon(){
+            const now = new Date();
+            const frac = getMoonPhase(now); // 0..1
+            const angle = frac * 2 * Math.PI;
+            // illumination fraction: 0..1 (0 new, 1 full)
+            const illum = (1 - Math.cos(angle)) / 2;
+
+            const size = 84; // px
+            const radius = size/2;
+            // compute shadow circle horizontal offset to produce crescent shapes
+            // cos(angle) in [-1,1], multiply by radius to get offset in px
+            const shadowOffset = Math.cos(angle) * radius;
+
+            const moonEl = document.getElementById('moon');
+            const shadowEl = document.getElementById('moonShadow');
+            const phaseName = document.getElementById('moonPhaseName');
+            const illumEl = document.getElementById('moonIllum');
+
+            if(shadowEl){
+                // position the shadow circle by translating it horizontally
+                shadowEl.style.transform = `translateX(${shadowOffset}px)`;
+                // when illumination is near full, hide shadow slightly
+                shadowEl.style.opacity = (illum < 0.01) ? '1' : (illum > 0.99 ? '0.02' : '1');
+            }
+
+            if(phaseName) phaseName.textContent = `Moon: ${phaseNameFromFraction(frac)}`;
+            if(illumEl) illumEl.textContent = `Illumination: ${Math.round(illum*100)}%`;
+
+            // Toggle night mode when local time is night
+            const h = now.getHours();
+            const isNight = (h >= 18 || h < 6);
+            if(isNight) document.body.classList.add('night'); else document.body.classList.remove('night');
+        }
+
+        function tick(){
+            updateClock();
+            renderMoon();
+        }
+
+        updateClock();
+        renderMoon();
+        setInterval(tick,1000);
+
+        // Fireflies: create a set of floating glowing dots that move randomly inside the clock container.
+        function createFireflies(count=12){
+            const container = document.getElementsByClassName('clock-container')[0];
+            if(!container) return;
+            const area = document.createElement('div');
+            area.className = 'fireflies';
+            area.id = 'fireflies';
+            container.appendChild(area);
+
+            function rand(min,max){return Math.random()*(max-min)+min}
+
+            for(let i=0;i<count;i++){
+                const f = document.createElement('div');
+                f.className = 'firefly';
+                f.style.left = rand(10,90)+'%';
+                f.style.top = rand(10,90)+'%';
+                f.style.opacity = rand(0.5,1)
+                area.appendChild(f);
+
+                // Move periodically to a new random position
+                (function(el){
+                    function move(){
+                        const nx = rand(5,95);
+                        const ny = rand(5,95);
+                        const scale = rand(0.6,1.15);
+                        const opa = rand(0.35,1);
+                        el.style.transform = `translate(-50%,-50%) translate(${nx - 50}%, ${ny - 50}%) scale(${scale})`;
+                        el.style.opacity = opa;
+                        // schedule next move with a varied delay
+                        setTimeout(move, rand(1800,4200));
+                    }
+                    // small initial delay so motion is staggered
+                    setTimeout(move, rand(200,1200));
+                })(f);
+            }
+        }
+
+        // Create fireflies after DOM ready
+        if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ()=>createFireflies(12)); else createFireflies(12);
+    </script>
+</body>
+</html>
