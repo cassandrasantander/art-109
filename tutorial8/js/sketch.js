@@ -1,11 +1,16 @@
 
 let canvas; 
+let xPos = 0;
+let yPos = 0;
+let easing = .01;
+
+
 
 function setup () {
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.position(0,0);
     canvas.style("z-index", -2);
-    //  background(225);
+    
 }
 
 function windowResize() {
@@ -13,15 +18,20 @@ resizeCanvas(windowWidth, windowheight);
 }
 
 function draw () {
-    
+    clear();
+
+xPos = xPos + ((mouseY - xPos) * easing);
+yPos = yPos + ((mouseY - yPos) * easing);
+
+
+    drawThing(xPos, yPos);
 }
 
-function mouseMoved() {
-    drawThing();
-}
 
-function drawThing() {
+function drawThing(_x,_y) {
     strokeWeight (1);
-    fill(random(0,255,10), random(200,255,0), random(100,0,50));
+    fill(255,50,100);
+    ellipse (mouseX, mouseY, 40, 40);
+    fill(50,200,50);
     ellipse (mouseX, mouseY, 30, 30);
 }
