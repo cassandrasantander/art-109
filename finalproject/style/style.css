@@ -71,10 +71,6 @@ p {
     animation-fill-mode: forwards;
 }
 
-.drawing:hover {
-    Color: rgb(144, 147, 241);
-    background-color: rgb(99, 54, 232);
-}
 
 
 @keyframes fadein2 {
